@@ -1,13 +1,31 @@
+import json
+import os # 파이썬을 이용해서 시스템 내부에 접근이 가능하다
+
+task_file = 'tasks.json'
+
+def load_task():
+    if os.path.exists(task_file):
+        with open(task_file, 'r', encoding='utf-8') as file: #file =>open(ask_file, 'r', encoding='utf-8')
+            return json.load(file) 
+    return []
+
+def save_task(tasks): #add_task를 통해 전달받은 해야할 일을 파일에 저장하는 기능
+    with open(task_file, 'w', encoding='utf-8') as file: #file => open(TASK_FILE, 'w', encoding='utf-8')
+        json.dump(tasks, file, indent=4, ensure_ascii=False)
+
 def add_task(task_name): # 할 일 추가 함수
+    tasks = load_task()
+    task = {'name': task_name, 'completed':False}
+    tasks.append(task)
+    save_task(tasks)
+
+def view_task(): #할 일 목록보기 
     pass
 
-def view_task():#할 일 목록보기 
+def complete_task(task_number): #할 일 완료
     pass
 
-def complete_task(task_number):#할 일 완료
-    pass
-
-def delete_task(task_number):#할 일 삭제
+def delete_task(task_number): #할 일 삭제
     pass
 
 def show_menu(): # 메뉴를 보여주는 함수
