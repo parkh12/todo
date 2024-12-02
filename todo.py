@@ -20,7 +20,15 @@ def add_task(task_name): # 할 일 추가 함수
     save_task(tasks)
 
 def view_task(): #할 일 목록보기 
-    pass
+    tasks = load_task() # 파일이 있는 경우 안에 내용물이 tasks에 들어가고 없으면 빈 릿스트가 들어감
+    if not tasks: # tasks는 if문을 만나면
+        print('현재 등록된 작업이 없습니다.')
+    else :
+        print('작업 목록 :')
+        for i, task in enumerate(tasks, start=1): # tasks = [{'name':'파이썬 공부하기', 'completed':false}]
+        #enumerate() -> i =1, task = { "name": "파이썬 공부하기","completed": false}
+            status = '완료' if task['completed'] else '미완료'#키값을 넣으면 자동적으로 반환값을 준다
+            print(f'{i}. {task['name']} - {status}') #=>1.파이썬 공부하기 - false
 
 def complete_task(task_number): #할 일 완료
     pass
