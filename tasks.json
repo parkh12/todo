@@ -1,6 +1,10 @@
 [
     {
         "name": "파이썬 공부하기",
+        "completed": true
+    },
+    {
+        "name": "3",
         "completed": false
     }
 ]
