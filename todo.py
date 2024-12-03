@@ -40,17 +40,6 @@ def complete_task(task_number):#할 일 완료
         print("유효하지 않은 번호입니다. 다시 확인 후 입력해주세요")
 
 def delete_task(task_number): #할 일 삭제
-<<<<<<< HEAD
-    pass
-
-def show_menu(): #메뉴를 보여주는 함수
-    print("작업 관리 애플리케이션")
-    print("1. 할 일 추가")
-    print("2. 할 일 목록보기")
-    print("3. 할 일 완료")
-    print("4. 할 일 삭제")
-    print("5. 종료")
-=======
     tasks = load_task()
     if 1 <= task_number <= len(tasks):
         delete_tsk = tasks.pop(task_number - 1) #index 값 넣기 필요/ pop()을 통해서 삭제및 반환이 되고 삭제된 데이터가 delete_tsk에 들어감
@@ -58,6 +47,7 @@ def show_menu(): #메뉴를 보여주는 함수
         print(f"할 일 : '{delete_tsk['name']}'이(가) 삭제되었습니다.")
     else :
         print('유효하지 않은 작업 번호입니다. 다시 확인해주세요')
+
 def show_menu(): # 메뉴를 보여주는 함수
     print('작업 관리 애플리케이션')
     print('1. 할 일 추가')
@@ -65,7 +55,7 @@ def show_menu(): # 메뉴를 보여주는 함수
     print('3. 할 일 완료')
     print('4. 할 일 삭제')
     print('5. 종료')
->>>>>>> feature/delete-tasks
+
 
 def main():
     while True:
