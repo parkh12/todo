@@ -59,7 +59,9 @@ Python으로 스크립트를 실행합니다:
 ```bash
 python task_manager.py
 ```
+
 ![todo](https://github.com/user-attachments/assets/939a957d-79e0-47bc-834f-5e04bd164e1b)
+
 
 ### 사용 예시  
 1. 새로운 작업을 추가합니다.  
