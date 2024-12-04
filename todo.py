@@ -39,23 +39,22 @@ def complete_task(task_number):#할 일 완료
     else : 
         print("유효하지 않은 번호입니다. 다시 확인 후 입력해주세요")
 
-def delete_task(task_number): #할 일 삭제
+def delete_task(task_number):#할 일 삭제 -> 함수????? /   tasks.insert()  / len()
     tasks = load_task()
-    if 1 <= task_number <= len(tasks):
-        delete_tsk = tasks.pop(task_number - 1) #index 값 넣기 필요/ pop()을 통해서 삭제및 반환이 되고 삭제된 데이터가 delete_tsk에 들어감
-        save_task(delete_tsk) 
+    if 1 <= task_number <= len(tasks): # 1<task_number<1 / tasks => [{}]
+        delete_tsk = tasks.pop(task_number-1) #index 값 넣어야해요  / pop()통해서 삭제 및 반환이 되고 삭제가 된 데이터가 delete_tsk에 들어간다 -> [{"name": "파이썬 공부하기","completed": true}]
+        save_task(tasks) # tasks.pop(task_number-1) => [{"name": "파이썬 공부하기","completed": true}] => [] = tasks
         print(f"할 일 : '{delete_tsk['name']}'이(가) 삭제되었습니다.")
-    else :
-        print('유효하지 않은 작업 번호입니다. 다시 확인해주세요')
+    else:
+        print("유효하지 않은 작업 번호입니다. 다시 확인해주세요")
 
-def show_menu(): # 메뉴를 보여주는 함수
-    print('작업 관리 애플리케이션')
-    print('1. 할 일 추가')
-    print('2. 할 일 목록보기')
-    print('3. 할 일 완료')
-    print('4. 할 일 삭제')
-    print('5. 종료')
-
+def show_menu(): #메뉴를 보여주는 함수
+    print("작업 관리 애플리케이션")
+    print("1. 할 일 추가")
+    print("2. 할 일 목록보기")
+    print("3. 할 일 완료")
+    print("4. 할 일 삭제")
+    print("5. 종료")
 
 def main():
     while True:
@@ -80,3 +79,4 @@ def main():
             print("잘못 입력하셨습니다. 1번부터 5번까지의 기능 중 하나를 선택해주세요")
 
 main()
+
